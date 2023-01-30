@@ -3,6 +3,10 @@ module.exports = defineConfig({
   transpileDependencies: true,
 });
 
+// module.exports = {
+//   publicPath: process.env.NODE_ENV === "production" ? "/vue-todo/" : "/",
+// };
+
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/vue-todo/" : "/",
+  publicPath: "/vue-todo/",
 };
