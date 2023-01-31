@@ -15,7 +15,13 @@
           type="checkbox"
           class="checkbox-input"
         />
-        <span @click="selectTask(task, taskIndex)" class="task-list__name">
+        <span
+          @click="selectTask(task, taskIndex)"
+          :class="{
+            'task-list__name_completed': task.checked,
+          }"
+          class="task-list__name"
+        >
           {{ task.name }}</span
         >
       </li>
@@ -180,8 +186,13 @@ export default {
   transition: 0.5s;
 }
 .task-list__name {
+  position: relative;
   overflow-wrap: anywhere;
   cursor: pointer;
+}
+.task-list__name_completed {
+  opacity: 0.8;
+  text-decoration: line-through;
 }
 
 .list-enter-from,
